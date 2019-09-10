@@ -1,0 +1,134 @@
+\documentclass[letterpaper, 10 pt, conference]{ieeeconf}  
+\IEEEoverridecommandlockouts 
+\overrideIEEEmargins  
+
+\pdfminorversion=4
+
+\usepackage{url}
+\def\UrlFont{\rmfamily}
+
+%\usepackage[showframe]{geometry}
+
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{enumerate}
+\usepackage{tabulary}
+\usepackage{multirow}
+\usepackage{url}
+\usepackage{cite}
+\usepackage{lipsum}  
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{epstopdf}
+\usepackage{filecontents}
+\usepackage[misc]{ifsym}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{xxcolor}
+\usepackage{pgf}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{setspace}
+\usepackage[skins]{tcolorbox}
+
+
+\usepgfplotslibrary{groupplots,fillbetween}
+\usetikzlibrary{arrows,shadows,petri,automata,shapes.geometric}
+\pgfplotsset{compat=newest}
+
+\usepackage{listings}
+\usepackage{lipsum}
+\usepackage{booktabs}
+\usepackage[lined,boxed,commentsnumbered,linesnumbered]{algorithm2e}
+\usetikzlibrary{positioning,fit,calc}
+\usetikzlibrary{snakes}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{spy}
+\usepackage{circuitikz}
+\SetAlCapSkip{0.5em}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\lstdefinestyle{buzz}{
+    backgroundcolor=\color{black!5},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{blue},
+    numberstyle=\tiny\color{black!30},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize\ttfamily,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+}
+\lstset{style=buzz}
+\lstset{emph={  
+    function, foreach, tostring, concat, update_u_lj, log, listen, broadcast, is_newer,
+    get_eigen, pack, distr_comp_of_lambda2, get_u_c, power_iteration, get_lambda2,
+    add_n, add_robot, get_u_r
+    },
+    %emphstyle={\color{red}\bfseries\underbar}
+    emphstyle={\color{blue}}
+}
+
+
+\usetikzlibrary{external}
+%\tikzset{external/optimize=false}
+\tikzexternalize[prefix=compiled/]
+
+\begin{document}
+
+
+%PAGE 1
+
+%%%%%%%%%%%%
+\begin{figure*}%[tb]
+	\centering
+		\input{fig-3d} %TikZ
+	\caption{Three-dimensional plot of the drones trajectories.}
+	\label{fig:1} 
+\end{figure*}
+%%%%%%%%%%%%%
+
+%%%%%%%%%%%%
+\begin{figure*}%[tb]
+	\centering
+		\input{fig-multi-p} %TikZ
+	\caption{Evolution of $x$, $y$, $z$ components of the positions of all drones.}
+	\label{fig:1} 
+\end{figure*}
+%%%%%%%%%%%%%
+
+%%%%%%%%%%%%
+\begin{figure*}%[tb]
+	\centering
+		\input{fig-multi-v} %TikZ
+	\caption{Evolution of $x$, $y$, $z$ components of the velocities of all drones.}
+	\label{fig:1} 
+\end{figure*}
+%%%%%%%%%%%%%
+
+
+
+
+%PAGE 2
+
+%%%%%%%%%%%%
+\begin{figure*}%[tb]
+	\centering
+		\input{fig-multi-metrics} %TikZ
+	\caption{Evolution of the experiment performance metrics.}
+	\label{fig:1} 
+\end{figure*}
+%%%%%%%%%%%%%
+
+
+
+
+\end{document}

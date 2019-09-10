@@ -1,0 +1,100 @@
+\begin{tikzpicture}
+	\begin{groupplot}[
+      	group style={group size=1 by 3, horizontal sep=2cm, vertical sep=0.3cm},
+      	width=\textwidth,
+		height=0.125\textheight,
+		enlarge x limits=0.0,
+		xmin=0,
+		%each nth point=3,
+		no marks,
+    	]
+	%1
+	\nextgroupplot[
+			ylabel={$\dot{x}$},
+			xticklabel=\empty,
+			]
+		%flock
+		\addplot table [x index = {3}, y index = {0}, col sep=comma] {./pgfplotsdata/sim_vel_0.csv};
+		\addplot table [x index = {3}, y index = {0}, col sep=comma] {./pgfplotsdata/sim_vel_1.csv};
+		\addplot table [x index = {3}, y index = {0}, col sep=comma] {./pgfplotsdata/sim_vel_2.csv};
+		\addplot table [x index = {3}, y index = {0}, col sep=comma] {./pgfplotsdata/sim_vel_3.csv};
+		\addplot table [x index = {3}, y index = {0}, col sep=comma] {./pgfplotsdata/sim_vel_4.csv};
+		\addplot table [x index = {3}, y index = {0}, col sep=comma] {./pgfplotsdata/sim_vel_5.csv};
+		\addplot table [x index = {3}, y index = {0}, col sep=comma] {./pgfplotsdata/sim_vel_6.csv};
+		\addplot table [x index = {3}, y index = {0}, col sep=comma] {./pgfplotsdata/sim_vel_7.csv};
+		\addplot table [x index = {3}, y index = {0}, col sep=comma] {./pgfplotsdata/sim_vel_8.csv};
+		\addplot table [x index = {3}, y index = {0}, col sep=comma] {./pgfplotsdata/sim_vel_9.csv};
+		\addplot table [x index = {3}, y index = {0}, col sep=comma] {./pgfplotsdata/sim_vel_10.csv};
+		\addplot table [x index = {3}, y index = {0}, col sep=comma] {./pgfplotsdata/sim_vel_11.csv};
+		\addplot table [x index = {3}, y index = {0}, col sep=comma] {./pgfplotsdata/sim_vel_12.csv};
+		\addplot table [x index = {3}, y index = {0}, col sep=comma] {./pgfplotsdata/sim_vel_13.csv};
+		\addplot table [x index = {3}, y index = {0}, col sep=comma] {./pgfplotsdata/sim_vel_14.csv};
+		\addplot table [x index = {3}, y index = {0}, col sep=comma] {./pgfplotsdata/sim_vel_15.csv};
+		\addplot table [x index = {3}, y index = {0}, col sep=comma] {./pgfplotsdata/sim_vel_16.csv};
+		\addplot table [x index = {3}, y index = {0}, col sep=comma] {./pgfplotsdata/sim_vel_17.csv};
+		\addplot table [x index = {3}, y index = {0}, col sep=comma] {./pgfplotsdata/sim_vel_18.csv};
+		\addplot table [x index = {3}, y index = {0}, col sep=comma] {./pgfplotsdata/sim_vel_19.csv};
+		%leader
+		\addplot[very thick] table [x index = {3}, y index = {0}, col sep=comma] {./pgfplotsdata/sim_vel_leader.csv};
+
+	%2
+	\nextgroupplot[
+			ylabel={$\dot{y}$},
+			xticklabel=\empty,
+			]
+		%flock
+		\addplot table [x index = {3}, y index = {1}, col sep=comma] {./pgfplotsdata/sim_vel_0.csv};
+		\addplot table [x index = {3}, y index = {1}, col sep=comma] {./pgfplotsdata/sim_vel_1.csv};
+		\addplot table [x index = {3}, y index = {1}, col sep=comma] {./pgfplotsdata/sim_vel_2.csv};
+		\addplot table [x index = {3}, y index = {1}, col sep=comma] {./pgfplotsdata/sim_vel_3.csv};
+		\addplot table [x index = {3}, y index = {1}, col sep=comma] {./pgfplotsdata/sim_vel_4.csv};
+		\addplot table [x index = {3}, y index = {1}, col sep=comma] {./pgfplotsdata/sim_vel_5.csv};
+		\addplot table [x index = {3}, y index = {1}, col sep=comma] {./pgfplotsdata/sim_vel_6.csv};
+		\addplot table [x index = {3}, y index = {1}, col sep=comma] {./pgfplotsdata/sim_vel_7.csv};
+		\addplot table [x index = {3}, y index = {1}, col sep=comma] {./pgfplotsdata/sim_vel_8.csv};
+		\addplot table [x index = {3}, y index = {1}, col sep=comma] {./pgfplotsdata/sim_vel_9.csv};
+		\addplot table [x index = {3}, y index = {1}, col sep=comma] {./pgfplotsdata/sim_vel_10.csv};
+		\addplot table [x index = {3}, y index = {1}, col sep=comma] {./pgfplotsdata/sim_vel_11.csv};
+		\addplot table [x index = {3}, y index = {1}, col sep=comma] {./pgfplotsdata/sim_vel_12.csv};
+		\addplot table [x index = {3}, y index = {1}, col sep=comma] {./pgfplotsdata/sim_vel_13.csv};
+		\addplot table [x index = {3}, y index = {1}, col sep=comma] {./pgfplotsdata/sim_vel_14.csv};
+		\addplot table [x index = {3}, y index = {1}, col sep=comma] {./pgfplotsdata/sim_vel_15.csv};
+		\addplot table [x index = {3}, y index = {1}, col sep=comma] {./pgfplotsdata/sim_vel_16.csv};
+		\addplot table [x index = {3}, y index = {1}, col sep=comma] {./pgfplotsdata/sim_vel_17.csv};
+		\addplot table [x index = {3}, y index = {1}, col sep=comma] {./pgfplotsdata/sim_vel_18.csv};
+		\addplot table [x index = {3}, y index = {1}, col sep=comma] {./pgfplotsdata/sim_vel_19.csv};
+		%leader
+		\addplot[very thick] table [x index = {3}, y index = {1}, col sep=comma] {./pgfplotsdata/sim_vel_leader.csv};
+	
+	%3
+	\nextgroupplot[
+			ylabel={$\dot{z}$},
+			xlabel={Time (s)},
+			]
+		%flock
+		\addplot table [x index = {3}, y index = {2}, col sep=comma] {./pgfplotsdata/sim_vel_0.csv};
+		\addplot table [x index = {3}, y index = {2}, col sep=comma] {./pgfplotsdata/sim_vel_1.csv};
+		\addplot table [x index = {3}, y index = {2}, col sep=comma] {./pgfplotsdata/sim_vel_2.csv};
+		\addplot table [x index = {3}, y index = {2}, col sep=comma] {./pgfplotsdata/sim_vel_3.csv};
+		\addplot table [x index = {3}, y index = {2}, col sep=comma] {./pgfplotsdata/sim_vel_4.csv};
+		\addplot table [x index = {3}, y index = {2}, col sep=comma] {./pgfplotsdata/sim_vel_5.csv};
+		\addplot table [x index = {3}, y index = {2}, col sep=comma] {./pgfplotsdata/sim_vel_6.csv};
+		\addplot table [x index = {3}, y index = {2}, col sep=comma] {./pgfplotsdata/sim_vel_7.csv};
+		\addplot table [x index = {3}, y index = {2}, col sep=comma] {./pgfplotsdata/sim_vel_8.csv};
+		\addplot table [x index = {3}, y index = {2}, col sep=comma] {./pgfplotsdata/sim_vel_9.csv};
+		\addplot table [x index = {3}, y index = {2}, col sep=comma] {./pgfplotsdata/sim_vel_10.csv};
+		\addplot table [x index = {3}, y index = {2}, col sep=comma] {./pgfplotsdata/sim_vel_11.csv};
+		\addplot table [x index = {3}, y index = {2}, col sep=comma] {./pgfplotsdata/sim_vel_12.csv};
+		\addplot table [x index = {3}, y index = {2}, col sep=comma] {./pgfplotsdata/sim_vel_13.csv};
+		\addplot table [x index = {3}, y index = {2}, col sep=comma] {./pgfplotsdata/sim_vel_14.csv};
+		\addplot table [x index = {3}, y index = {2}, col sep=comma] {./pgfplotsdata/sim_vel_15.csv};
+		\addplot table [x index = {3}, y index = {2}, col sep=comma] {./pgfplotsdata/sim_vel_16.csv};
+		\addplot table [x index = {3}, y index = {2}, col sep=comma] {./pgfplotsdata/sim_vel_17.csv};
+		\addplot table [x index = {3}, y index = {2}, col sep=comma] {./pgfplotsdata/sim_vel_18.csv};
+		\addplot table [x index = {3}, y index = {2}, col sep=comma] {./pgfplotsdata/sim_vel_19.csv};
+		%leader
+		\addplot[very thick] table [x index = {3}, y index = {2}, col sep=comma] {./pgfplotsdata/sim_vel_leader.csv};
+	
+		
+	\end{groupplot}
+\end{tikzpicture}

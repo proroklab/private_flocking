@@ -1,0 +1,118 @@
+\begin{tikzpicture}
+	\begin{groupplot}[
+      		group style={group size=2 by 2, horizontal sep=2cm, vertical sep=1cm},
+      		width=0.5\textwidth,
+		height=0.3\textheight,
+		xlabel={$x$},
+		ylabel={$y$},
+		zlabel={$z$},,
+		%each nth point=3,
+		no marks,
+    	]
+	%1
+	\nextgroupplot[]	
+		%flock
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp1/sim_pos_0.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp1/sim_pos_1.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp1/sim_pos_2.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp1/sim_pos_3.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp1/sim_pos_4.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp1/sim_pos_5.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp1/sim_pos_6.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp1/sim_pos_7.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp1/sim_pos_8.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp1/sim_pos_9.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp1/sim_pos_10.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp1/sim_pos_11.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp1/sim_pos_12.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp1/sim_pos_13.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp1/sim_pos_14.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp1/sim_pos_15.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp1/sim_pos_16.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp1/sim_pos_17.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp1/sim_pos_18.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp1/sim_pos_19.csv};	
+		%leader
+		\addplot3 [very thick] table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp1/sim_pos_leader.csv};
+		
+	%2
+	\nextgroupplot[]	
+		%flock
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp2/sim_pos_0.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp2/sim_pos_1.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp2/sim_pos_2.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp2/sim_pos_3.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp2/sim_pos_4.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp2/sim_pos_5.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp2/sim_pos_6.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp2/sim_pos_7.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp2/sim_pos_8.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp2/sim_pos_9.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp2/sim_pos_10.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp2/sim_pos_11.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp2/sim_pos_12.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp2/sim_pos_13.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp2/sim_pos_14.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp2/sim_pos_15.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp2/sim_pos_16.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp2/sim_pos_17.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp2/sim_pos_18.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp2/sim_pos_19.csv};	
+		%leader
+		\addplot3 [very thick] table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp2/sim_pos_leader.csv};
+	
+	%3
+	\nextgroupplot[]	
+		%flock
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp3/sim_pos_0.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp3/sim_pos_1.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp3/sim_pos_2.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp3/sim_pos_3.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp3/sim_pos_4.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp3/sim_pos_5.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp3/sim_pos_6.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp3/sim_pos_7.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp3/sim_pos_8.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp3/sim_pos_9.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp3/sim_pos_10.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp3/sim_pos_11.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp3/sim_pos_12.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp3/sim_pos_13.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp3/sim_pos_14.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp3/sim_pos_15.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp3/sim_pos_16.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp3/sim_pos_17.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp3/sim_pos_18.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp3/sim_pos_19.csv};	
+		%leader
+		\addplot3 [very thick] table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp3/sim_pos_leader.csv};
+	
+	%3
+	\nextgroupplot[]	
+		%flock
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp4/sim_pos_0.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp4/sim_pos_1.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp4/sim_pos_2.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp4/sim_pos_3.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp4/sim_pos_4.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp4/sim_pos_5.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp4/sim_pos_6.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp4/sim_pos_7.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp4/sim_pos_8.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp4/sim_pos_9.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp4/sim_pos_10.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp4/sim_pos_11.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp4/sim_pos_12.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp4/sim_pos_13.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp4/sim_pos_14.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp4/sim_pos_15.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp4/sim_pos_16.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp4/sim_pos_17.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp4/sim_pos_18.csv};
+		\addplot3 table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp4/sim_pos_19.csv};	
+		%leader
+		\addplot3 [very thick] table [x index = {0}, y index = {1}, z index = {2}, col sep=comma] {./pgfplotsdata/exp4/sim_pos_leader.csv};
+
+	\end{groupplot}
+\end{tikzpicture}
+

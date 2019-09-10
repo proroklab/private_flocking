@@ -1,0 +1,106 @@
+{
+	"SeeDocsAt": "https://github.com/Microsoft/AirSim/blob/master/docs/settings.md",
+	"SettingsVersion": 1.2,
+	"SimMode": "Multirotor",
+	"ViewMode": "Manual",
+	"ClockSpeed": 2.0,
+	"Vehicles": {
+
+
+		"Drone0": {
+			"VehicleType": "SimpleFlight",
+			"X": 8, "Y": -58, "Z": 0, "Yaw": 0
+		},
+		"Drone1": {
+			"VehicleType": "SimpleFlight",
+			"X": 8, "Y": -54, "Z": 0, "Yaw": 0
+		},
+		"Drone2": {
+			"VehicleType": "SimpleFlight",
+			"X": 8, "Y": -50, "Z": 0, "Yaw": 0
+		},
+		"Drone3": {
+			"VehicleType": "SimpleFlight",
+			"X": 8, "Y": -46, "Z": 0, "Yaw": 0
+		},
+		"Drone4": {
+			"VehicleType": "SimpleFlight",
+			"X": 8, "Y": -42, "Z": 0, "Yaw": 0
+		},
+
+
+		"Drone5": {
+			"VehicleType": "SimpleFlight",
+			"X": 4, "Y": -58, "Z": 0, "Yaw": 0
+		},
+		"Drone6": {
+			"VehicleType": "SimpleFlight",
+			"X": 4, "Y": -54, "Z": 0, "Yaw": 0
+		},
+		"Drone7": {
+			"VehicleType": "SimpleFlight",
+			"X": 4, "Y": -50, "Z": 0, "Yaw": 0
+		},
+		"Drone8": {
+			"VehicleType": "SimpleFlight",
+			"X": 4, "Y": -46, "Z": 0, "Yaw": 0
+		},
+		"Drone9": {
+			"VehicleType": "SimpleFlight",
+			"X": 4, "Y": -42, "Z": 0, "Yaw": 0
+		},
+
+
+		"Drone10": {
+			"VehicleType": "SimpleFlight",
+			"X": 0, "Y": -58, "Z": 0, "Yaw": 0
+		},
+		"Drone11": {
+			"VehicleType": "SimpleFlight",
+			"X": 0, "Y": -54, "Z": 0, "Yaw": 0
+		},
+		"Drone12": {
+			"VehicleType": "SimpleFlight",
+			"X": 0, "Y": -50, "Z": 0, "Yaw": 0
+		}
+		,
+		"Drone13": {
+			"VehicleType": "SimpleFlight",
+			"X": 0, "Y": -46, "Z": 0, "Yaw": 0
+		},
+		"Drone14": {
+			"VehicleType": "SimpleFlight",
+			"X": 0, "Y": -42, "Z": 0, "Yaw": 0
+		},
+
+
+		"Drone15": {
+			"VehicleType": "SimpleFlight",
+			"X": -4, "Y": -58, "Z": 0, "Yaw": 0
+		},
+		"Drone16": {
+			"VehicleType": "SimpleFlight",
+			"X": -4, "Y": -54, "Z": 0, "Yaw": 0
+		},
+		"Drone17": {
+			"VehicleType": "SimpleFlight",
+			"X": -4, "Y": -50, "Z": 0, "Yaw": 0
+		},
+		"Drone18": {
+			"VehicleType": "SimpleFlight",
+			"X": -4, "Y": -46, "Z": 0, "Yaw": 0
+		},
+		"Drone19": {
+			"VehicleType": "SimpleFlight",
+			"X": -4, "Y": -42, "Z": 0, "Yaw": 0
+		},
+
+		"Drone20": {
+			"VehicleType": "SimpleFlight",
+			"X": -8, "Y": -42, "Z": 0, "Yaw": 0
+		}
+
+
+
+	}
+}

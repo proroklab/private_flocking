@@ -1,0 +1,85 @@
+\begin{tikzpicture}
+	\begin{groupplot}[
+      	group style={group size=1 by 6, horizontal sep=2cm, vertical sep=1cm},
+      	width=\textwidth,
+		height=0.175\textheight,
+		enlarge x limits=0.0,
+		xmin=0,
+		%each nth point=3,
+		no marks,
+    	]
+	%1
+	\nextgroupplot[
+			title={Alignment},
+			ymin = 0,
+			ylabel={corr.},
+			xticklabel=\empty,
+			]
+		%
+		\addplot[
+			color=blue,
+			] table [x index = {0}, y index = {1}, col sep=comma] {./pgfplotsdata/metric_1.csv};
+	
+
+	%2
+	\nextgroupplot[
+			title={Flock Speed},
+			ymin = 0,
+			ylabel={m/s},
+			xticklabel=\empty,
+			]
+		%
+		\addplot[
+			color=blue,
+			] table [x index = {0}, y index = {1}, col sep=comma] {./pgfplotsdata/metric_2.csv};
+		
+	%3
+	\nextgroupplot[
+			title={Extension},
+			ymin = 0,
+			ylabel={m},
+			xticklabel=\empty,
+			]
+		%
+		\addplot[
+			color=blue,
+			] table [x index = {0}, y index = {1}, col sep=comma] {./pgfplotsdata/metric_3.csv};
+			
+	%4
+	\nextgroupplot[
+			title={Leader Position w.r.t. Flock},
+			ylabel={m},
+			xticklabel=\empty,
+			]
+		%
+		\addplot[
+			color=blue,
+			] table [x index = {0}, y index = {1}, col sep=comma] {./pgfplotsdata/metric_4.csv};
+			
+	%5
+	\nextgroupplot[
+			title={Leader-NN / (Average Follower-NN)},
+			ymin = 0,
+			ylabel={abs.},
+			xticklabel=\empty,
+			]
+		%
+		\addplot[
+			color=blue,
+			] table [x index = {0}, y index = {1}, col sep=comma] {./pgfplotsdata/metric_5.csv};
+	
+	%6
+	\nextgroupplot[
+			title={Flock Centroid to Reference Trajectory Distance},
+			ymin = 0,
+			ylabel={m},
+			xlabel={Time (s)},
+			]
+		%
+		\addplot[
+			color=blue,
+			] table [x index = {0}, y index = {1}, col sep=comma] {./pgfplotsdata/metric_6.csv};
+	
+		
+	\end{groupplot}
+\end{tikzpicture}

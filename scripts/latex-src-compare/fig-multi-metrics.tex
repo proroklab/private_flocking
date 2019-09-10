@@ -1,0 +1,97 @@
+\begin{tikzpicture}
+	\begin{groupplot}[
+      	group style={group size=1 by 6, horizontal sep=2cm, vertical sep=1cm},
+      	width=\textwidth,
+		height=0.175\textheight,
+		enlarge x limits=0.0,
+		xmin=0,
+		%each nth point=3,
+		no marks,
+		legend style={at={(0.5,-0.5)},anchor=north},
+		legend columns=4, 
+    	]
+	%1
+	\nextgroupplot[
+			title={Alignment},
+			ymin = 0,
+			ylabel={corr.},
+			xticklabel=\empty,
+			]
+		%
+		\addplot[color=blue] table [x index = {0}, y index = {1}, col sep=comma] {./pgfplotsdata/exp1/metric_1.csv};
+		\addplot[color=red] table [x index = {0}, y index = {1}, col sep=comma] {./pgfplotsdata/exp2/metric_1.csv};
+		\addplot[color=black] table [x index = {0}, y index = {1}, col sep=comma] {./pgfplotsdata/exp3/metric_1.csv};
+		\addplot[color=teal] table [x index = {0}, y index = {1}, col sep=comma] {./pgfplotsdata/exp4/metric_1.csv};
+	
+
+	%2
+	\nextgroupplot[
+			title={Flock Speed},
+			ymin = 0,
+			ylabel={m/s},
+			xticklabel=\empty,
+			]
+		%
+		\addplot[color=blue] table [x index = {0}, y index = {1}, col sep=comma] {./pgfplotsdata/exp1/metric_2.csv};
+		\addplot[color=red] table [x index = {0}, y index = {1}, col sep=comma] {./pgfplotsdata/exp2/metric_2.csv};
+		\addplot[color=black] table [x index = {0}, y index = {1}, col sep=comma] {./pgfplotsdata/exp3/metric_2.csv};
+		\addplot[color=teal] table [x index = {0}, y index = {1}, col sep=comma] {./pgfplotsdata/exp4/metric_2.csv};
+		
+	%3
+	\nextgroupplot[
+			title={Extension},
+			ymin = 0,
+			ylabel={m},
+			xticklabel=\empty,
+			]
+		%
+		\addplot[color=blue] table [x index = {0}, y index = {1}, col sep=comma] {./pgfplotsdata/exp1/metric_3.csv};
+		\addplot[color=red] table [x index = {0}, y index = {1}, col sep=comma] {./pgfplotsdata/exp2/metric_3.csv};
+		\addplot[color=black] table [x index = {0}, y index = {1}, col sep=comma] {./pgfplotsdata/exp3/metric_3.csv};
+		\addplot[color=teal] table [x index = {0}, y index = {1}, col sep=comma] {./pgfplotsdata/exp4/metric_3.csv};
+			
+	%4
+	\nextgroupplot[
+			title={Leader Position w.r.t. Flock},
+			ylabel={m},
+			xticklabel=\empty,
+			]
+		%
+		\addplot[color=blue] table [x index = {0}, y index = {1}, col sep=comma] {./pgfplotsdata/exp1/metric_4.csv};
+		\addplot[color=red] table [x index = {0}, y index = {1}, col sep=comma] {./pgfplotsdata/exp2/metric_4.csv};
+		\addplot[color=black] table [x index = {0}, y index = {1}, col sep=comma] {./pgfplotsdata/exp3/metric_4.csv};
+		\addplot[color=teal] table [x index = {0}, y index = {1}, col sep=comma] {./pgfplotsdata/exp4/metric_4.csv};
+			
+	%5
+	\nextgroupplot[
+			title={Leader-NN / (Average Follower-NN)},
+			ymin = 0,
+			ylabel={abs.},
+			xticklabel=\empty,
+			]
+		%
+		\addplot[color=blue] table [x index = {0}, y index = {1}, col sep=comma] {./pgfplotsdata/exp1/metric_5.csv};
+		\addplot[color=red] table [x index = {0}, y index = {1}, col sep=comma] {./pgfplotsdata/exp2/metric_5.csv};
+		\addplot[color=black] table [x index = {0}, y index = {1}, col sep=comma] {./pgfplotsdata/exp3/metric_5.csv};
+		\addplot[color=teal] table [x index = {0}, y index = {1}, col sep=comma] {./pgfplotsdata/exp4/metric_5.csv};
+	
+	%6
+	\nextgroupplot[
+			title={Flock Centroid to Reference Trajectory Distance},
+			ymin = 0,
+			ylabel={m},
+			xlabel={Time (s)},
+			]
+		%
+		\addplot[color=blue] table [x index = {0}, y index = {1}, col sep=comma] {./pgfplotsdata/exp1/metric_6.csv};
+		\addlegendentry{exp 1}
+		\addplot[color=red] table [x index = {0}, y index = {1}, col sep=comma] {./pgfplotsdata/exp2/metric_6.csv};
+		\addlegendentry{exp 2}
+		\addplot[color=black] table [x index = {0}, y index = {1}, col sep=comma] {./pgfplotsdata/exp3/metric_6.csv};
+		\addlegendentry{exp 3}
+		\addplot[color=teal] table [x index = {0}, y index = {1}, col sep=comma] {./pgfplotsdata/exp4/metric_6.csv};
+		\addlegendentry{exp 4}
+	
+		
+	\end{groupplot}
+\end{tikzpicture}
