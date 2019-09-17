@@ -32,7 +32,7 @@ while read line; do
 		echo "Directory for $line does not exists. Parsing the data."
 		mkdir ../exp_logs/$OPTIMIZATION/logs/$line/latex/
 		mkdir ../exp_logs/$OPTIMIZATION/logs/$line/latex/pgfplotsdata/
-		python3.5 ../parse.py --experiment_id $line --optimization_id $OPTIMIZATION --downsampling $SAMPLING
+		python ../parse.py --experiment_id $line --optimization_id $OPTIMIZATION --downsampling $SAMPLING
 	fi
 	cp -r ../exp_logs/$OPTIMIZATION/logs/$line/latex/pgfplotsdata/. ../exp_logs/$OPTIMIZATION/logs/comparisons/$FOLDERNAME/latex/pgfplotsdata/exp$counter/
 	counter=$((counter+1))

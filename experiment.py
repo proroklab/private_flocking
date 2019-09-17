@@ -1,17 +1,12 @@
 import os
-import airsim
-import numpy as np
 import argparse
-import random
 import time
-#import config
 import utils
 import sys
 sys.path.insert(0,'../controllers/')
-from classes import Drone, Flock
+from classes import Flock
 import pygame
 from pygame.locals import *
-import math
 
 parser = argparse.ArgumentParser('flocking')
 
@@ -30,23 +25,20 @@ parser.add_argument('--gaussian_error_mean', type=float, default=0)
 parser.add_argument('--gaussian_error_std', type=float, default=0.1)
 parser.add_argument('--add_v_threshold', action='store_true', default=False)
 parser.add_argument('--v_thres', type=float, default=5)
-parser.add_argument('--v_update_freq', type=float, default=50)
 
 # Flocking methods
-parser.add_argument('--flocking_method', type=str, default='reynolds', choices=['reynolds', 'sciencerobotics'])
+parser.add_argument('--flocking_method', type=str, default='reynolds', choices=['reynolds'])
 
 # Reynolds flocking
 # Leaders
 parser.add_argument('--leader_id', type=int, default=-1)
-parser.add_argument('--trajectory', type=str, default='Sinusoidal', choices=['Line', 'Zigzag', 'Sinusoidal', 'Circle', 'Square'])
+parser.add_argument('--trajectory', type=str, default='Sinusoidal', choices=['Line', 'Zigzag', 'Sinusoidal'])
 parser.add_argument('--lookahead', type=float, default=0.5, help='lookahead x distance')
 parser.add_argument('--line_len', type=float, default=10000, help='total length (x_direction) of the line, zigzag and sinusoidal trajectory')
 parser.add_argument('--zigzag_len', type=float, default=60, help='period length of the zigzag trajectory')
 parser.add_argument('--zigzag_width', type=float, default=5, help='one-sided width of the zigzag trajectory')
 parser.add_argument('--sine_period_ratio', type=float, default=10, help='period ratio of the sine wave trajectory')
 parser.add_argument('--sine_width', type=float, default=5, help='amplitude of the sine wave trajectory')
-parser.add_argument('--side_len', type=float, default=30, help='length of the side of the square trajectory')
-parser.add_argument('--radius', type=float, default=25, help='radius of the circular trajectory')
 parser.add_argument('--v_leader', type=float, default=1)
 parser.add_argument('--leader_sep_weight', type=float, default=0.3)
 parser.add_argument('--leader_ali_weight', type=float, default=0.3)
@@ -73,8 +65,6 @@ parser.add_argument('--log_dir', type=str, default='logs')
 parser.add_argument('--log_time', type=str, default='000')
 parser.add_argument('--num_gpu', type=int, default=1)
 parser.add_argument('--random_seed', type=int, default=12345)
-parser.add_argument('--use_tensorboard', action='store_true', default=False)
-
 
 
 def main():
@@ -84,8 +74,9 @@ def main():
     args = parser.parse_args()
     if args.flocking_method == 'reynolds':
         from reynolds import Controller
-    elif args.flocking_method == 'sciencerobotics':
-        from sciencerobotics import Controller
+    else:
+        print("Wrong flocking controller specified.")
+        sys.exit(1)
     from leader_controller import Leader_Controller
 
     path = os.path.join(args.optim_path, args.log_dir)

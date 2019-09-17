@@ -3,12 +3,10 @@ import sys
 import numpy as np
 import torch
 import argparse
-
 import torch.nn as nn
 import torch.utils
 import torch.backends.cudnn as cudnn
 from torch.autograd import Variable
-
 import tensorboardX
 
 sys.path.insert(0,'../../')

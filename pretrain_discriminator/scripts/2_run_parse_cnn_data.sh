@@ -1,4 +1,4 @@
 #!/bin/bash
 
-python3.5 ./parse_cnn_data.py
-python3.5 ./randomise_dataset.py
+python ./parse_cnn_data.py
+python ./randomise_dataset.py

@@ -1,7 +1,5 @@
-import airsim
 import numpy as np
 import math
-from scipy.special import ellipeinc
 
 def normalize(v):
     norm = np.linalg.norm(v)
@@ -10,16 +8,13 @@ def normalize(v):
     return v / norm
 
 class Leader_Controller(object):
-    def __init__(self, drone, flock_list, args, centre=np.array([-20, 20])):
+    def __init__(self, drone, flock_list, args):
         self.drone = drone
         self.flock_list = flock_list
-        self.track_method = 'lookahead'
         self.trajectory = args.trajectory
         self.v_leader = args.v_leader
         self.index = -1
         self.stop = False
-
-        self.line_ish_traj = ['Line', 'Zigzag', 'Sinusoidal']
 
         # Flocking
         self.pos2v_scale = args.pos2v_scale
@@ -173,10 +168,3 @@ class Leader_Controller(object):
             v_leader += self.coh_weight * v_leader_coh
 
         self.drone.move_by_velocity(v_leader)
-
-
-
-
-
-
-

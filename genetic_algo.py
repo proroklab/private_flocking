@@ -1,15 +1,9 @@
-import pygmo as pg
 import os
-import sys
 import time
 from datetime import datetime
 import json
 import math
-import numpy as np
 import utils
-
-import tensorboardX
-
 from config import args
 
 TS_LIST = []
@@ -74,13 +68,6 @@ class Flocking:
         # variance of leader traj tracking distance error (minimise)
         obj9 = metrics['ldr_track_err_var']*10
 
-
-
-        ############################################################################
-        ############################################################################
-        ############################################################################
-        ############################################################################
-        ############################################################################
         # flocking metric
         optim_obj = obj1 + obj2 + obj3 + obj4 + obj5 + obj6 + obj7 + obj8 + obj9
         optim_obj = optim_obj/2 # make "good flocking to be within performance of 1"
@@ -94,7 +81,6 @@ class Flocking:
         utils.parse_sim_data(self.optim_path, timestamp)
         utils.load(self.model, os.path.join(self.optim_path, 'weights.pt'))
         privacy_score, predict_correctness, predict_confidence = self.model.test_loss(timestamp)
-        total_correct_labels = np.sum(predict_correctness)
 
         # VERIFY HOW WE ARE PERFORMING WRT THE ORIGINAL DISCRIMINATOR
         model_copy = self.model
@@ -103,7 +89,6 @@ class Flocking:
 
         # privacy metric
         privacy_obj = 1/(privacy_score + 1) # 2/(privacy_score + 1)
-        #privacy_obj = total_correct_labels/13 #i.e. divide by half the total number of labels
 
         # combining flocking and privacy in a single fitness value
         if optim_obj > 1.0:
@@ -112,13 +97,6 @@ class Flocking:
             #alpha = 1.0 #pure flocking
             alpha = 0.5 #private flocking
             single_obj = alpha * optim_obj + (1.0-alpha) * privacy_obj
-        ############################################################################
-        ############################################################################
-        ############################################################################
-        ############################################################################
-        ############################################################################
-
-
 
         # JSON Logging
         privacy_data = {
@@ -134,17 +112,6 @@ class Flocking:
         }
         with open(os.path.join(self.optim_path, 'logs', timestamp, "privacy.json"), 'w') as json_file:
             json.dump(privacy_data, json_file)
-
-        # TB Logging
-        # if self.best is None:
-        #     self.best = single_obj
-        # elif self.best > single_obj:
-        #     self.best = single_obj
-        # tb_logger = tensorboardX.SummaryWriter('../runs/{}'.format(self.optim_id))
-        # tb_logger.add_scalar("optim_flock_obj", optim_obj, self.count)
-        # tb_logger.add_scalar("privacy_score", privacy_score, self.count)
-        # tb_logger.add_scalar("single_obj", single_obj, self.count)
-        # tb_logger.add_scalar("best", self.best, self.count)
 
         self.count += 1
         print(self.count)

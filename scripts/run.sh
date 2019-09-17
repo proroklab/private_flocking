@@ -1,3 +1,3 @@
 #!/bin/bash
 
-python3.5 ../main.py
+python ../main.py

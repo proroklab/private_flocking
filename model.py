@@ -38,7 +38,7 @@ class Network(nn.Module):
         return x
 
     def test_loss(self, ts):
-        self.eval() # Summer's patch
+        self.eval()
         with torch.no_grad():
             input, target = utils.load_single_test_data(self.optim_path, ts, self.input_shape)
             logits = self(input)
@@ -57,7 +57,7 @@ class Network(nn.Module):
     def online_update(self, path, ts_list, input_shape, criterion, optimizer, logger, ga_gen):
         if len(ts_list) == 0:
             return 1
-        self.train() # Summer's patch
+        self.train()
         train_data = utils.load_disc_update_data(path, ts_list, input_shape)
         train_queue = torch.utils.data.DataLoader(train_data, batch_size=args.batch_size,
                                                   shuffle=True, pin_memory=True, num_workers=2)
@@ -80,7 +80,7 @@ class Network(nn.Module):
 def train(train_queue, model, criterion, optimizer, logger):
     objs = utils.AvgrageMeter()
     top1 = utils.AvgrageMeter()
-    model.train() # Summer's patch
+    model.train()
     for step, (input, target) in enumerate(train_queue):
         n = input.size(0)
         input = Variable(input.float(), requires_grad=False).to(device)
@@ -106,7 +106,7 @@ def train(train_queue, model, criterion, optimizer, logger):
 def test(test_queue, model, criterion, logger):
     objs = utils.AvgrageMeter()
     top1 = utils.AvgrageMeter()
-    model.eval() # Summer's patch
+    model.eval()
     with torch.no_grad():
         for step, (input, target) in enumerate(test_queue):
             n = input.size(0)

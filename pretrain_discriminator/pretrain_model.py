@@ -1,10 +1,4 @@
-import sys
-import numpy as np
-import torch
 import torch.nn as nn
-
-sys.path.insert(0,'../../')
-import utils
 
 class Network(nn.Module):
 

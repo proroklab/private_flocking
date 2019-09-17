@@ -22,8 +22,8 @@ for foldername in ../exp_logs/$OPTIMIZATION/logs/1*/ ; do
 		while read line; do
 			mkdir ../exp_logs/$OPTIMIZATION/logs/$line/latex/
 			mkdir ../exp_logs/$OPTIMIZATION/logs/$line/latex/pgfplotsdata/
-			python3.5 ../parse.py --experiment_id $line --optimization_id $OPTIMIZATION --downsampling $SAMPLING
-			python3.5 ../json2tex.py $OPTIMIZATION $line
+			python ../parse.py --experiment_id $line --optimization_id $OPTIMIZATION --downsampling $SAMPLING
+			python ../json2tex.py $OPTIMIZATION $line
 			cp -r ../exp_logs/$OPTIMIZATION/logs/$line/latex/pgfplotsdata/. ../exp_logs/$OPTIMIZATION/logs/evolution/$FOLDERNAME/latex/pgfplotsdata/exp$counter/
 			counter=$((counter+1))
 		done <temp.txt

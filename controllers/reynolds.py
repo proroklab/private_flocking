@@ -1,4 +1,3 @@
-import airsim
 import numpy as np
 
 def normalize(v):
@@ -90,8 +89,3 @@ class Controller(object):
         v_coh = self.get_coh_velocity()
         v_desired = self.sep_weight*v_sep + self.ali_weight*v_ali + self.coh_weight*v_coh
         self.drone.move_by_velocity(v_desired)
-
-
-
-
-

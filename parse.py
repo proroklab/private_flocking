@@ -1,11 +1,8 @@
 import os
-import sys
 import csv
 import json
-import math
 import argparse
 import numpy as np
-from numpy import linalg as la
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--experiment_id")
@@ -83,12 +80,6 @@ for x in sorted(os.walk(path)):
 						est_orient[int(row[0])][d][3] = float(row[25+c+d*27])
 					ldr_traj_track_err[int(row[0])] = float(row[2+n_drones*27])
 
-		# X Y positions
-		# for d in range(n_drones):
-		# 	plt.plot(sim_pos[:,d,0],sim_pos[:,d,1])
-		# plt.show()
-
-
 		# write to file for latex
 
 		for d in range(n_drones):
@@ -105,6 +96,20 @@ for x in sorted(os.walk(path)):
 				np.savetxt(x[0]+"/latex/pgfplotsdata/sim_vel_leader.csv", to_be_written[::args.downsampling], delimiter=',') #downsample if needed
 
 		# compute metrics
+
+		# velocity correlation (alignment)
+		sim_linear_vel_norm = np.linalg.norm(sim_linear_vel, axis=2)
+		ali = 0
+		EPSILON = 1e-3
+		for i in range(n_drones):
+			for j in range(n_drones):
+				if j != i:
+					d = np.einsum('ij,ij->i', sim_linear_vel[:,i,:], sim_linear_vel[:, j, :])
+					ali += (d/(sim_linear_vel_norm[:,i] + EPSILON)/(sim_linear_vel_norm[:,j]+EPSILON))
+		ali /= (n_drones*(n_drones-1))
+		# flocking speed
+		cof_v = np.mean(sim_linear_vel, axis=1)
+		avg_sim_flock_linear_speed = np.linalg.norm(cof_v, axis=-1)
 		# extension (cohesion)
 		avg_sim_linear_vel = np.mean(sim_linear_vel, axis=1)
 		avg_sim_pos = np.mean(sim_pos, axis=1)
@@ -113,13 +118,6 @@ for x in sorted(os.walk(path)):
 		ext = np.mean(dis, axis=1)
 		# position distance (cohesion)
 		avg_sim_fllwr_pos = np.mean(np.delete(sim_pos, leader_ids.astype(int), 1), axis=1)
-		avg_sim_ldr_pos = np.mean(sim_pos[:, leader_ids.astype(int)], axis=1)
-		avg_sim_ldr_fllwr_pos_diff = avg_sim_ldr_pos - avg_sim_fllwr_pos
-		avg_sim_ldr_fllwr_dis = np.linalg.norm(avg_sim_ldr_fllwr_pos_diff,axis=-1)
-		avg_sim_ldr_com_pos_diff = avg_sim_ldr_pos - avg_sim_pos
-		avg_sim_ldr_com_dis = np.linalg.norm(avg_sim_ldr_com_pos_diff, axis=-1)
-		avg_dis_diff = avg_sim_ldr_fllwr_dis - avg_sim_ldr_com_dis
-		avg_sim_dis = np.stack((avg_sim_ldr_fllwr_dis, avg_sim_ldr_com_dis, avg_dis_diff), axis=-1)
 		# relative position of leader wrt followers (front/back)
 		ldr_avg_fllwr_pos_diff = sim_pos[:, leader_ids.astype(int)] - np.reshape(avg_sim_fllwr_pos, (avg_sim_fllwr_pos.shape[0], 1, -1))
 		pos_vel_dot = np.einsum('kij,kij->ki', ldr_avg_fllwr_pos_diff, sim_linear_vel[:, leader_ids.astype(int)])
@@ -150,34 +148,6 @@ for x in sorted(os.walk(path)):
 		whole_flock_spacing = np.stack(whole_flock_spacing, axis=-1)
 		avg_flock_spacing = np.mean(whole_flock_spacing, axis=-1)
 		var_flock_spacing = np.var(whole_flock_spacing, axis=-1)
-		# velocity correlation (alignment)
-		sim_linear_vel_norm = np.linalg.norm(sim_linear_vel, axis=2)
-		ali = 0
-		EPSILON = 1e-3
-		for i in range(n_drones):
-			for j in range(n_drones):
-				if j != i:
-					d = np.einsum('ij,ij->i', sim_linear_vel[:,i,:], sim_linear_vel[:, j, :])
-					ali += (d/(sim_linear_vel_norm[:,i] + EPSILON)/(sim_linear_vel_norm[:,j]+EPSILON))
-		ali /= (n_drones*(n_drones-1))
-		# collision (separation)
-		coll = 0
-		r_coll = 5
-		for i in range(n_drones):
-			for j in range(n_drones):
-				if j!=i:
-					pass
-					dis = np.linalg.norm((sim_pos[:,i,:] - sim_pos[:,j,:]), axis=1)
-					dis[dis<r_coll] = 1
-					dis[dis>=r_coll] = 0
-					coll += dis
-		# flocking speed
-		cof_v = np.mean(sim_linear_vel, axis=1)
-		avg_sim_flock_linear_speed = np.linalg.norm(cof_v, axis=-1)
-		avg_sim_ldr_linear_speed = np.mean(sim_linear_vel_norm[:, leader_ids.astype(int)], axis=1)
-		avg_sim_fllwr_linear_speed = np.mean(np.delete(sim_linear_vel_norm, leader_ids.astype(int), 1), axis=1)
-		avg_sim_speed = np.stack((avg_sim_flock_linear_speed, avg_sim_ldr_linear_speed), axis=-1)
-
 		# trajectory tracking error (leader to trajectory)
 		traj_track_err = ldr_traj_track_err
 

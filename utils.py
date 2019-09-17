@@ -1,6 +1,5 @@
 from __future__ import print_function
 import os
-import sys
 import csv
 import json
 import shutil
@@ -13,7 +12,6 @@ from datetime import datetime
 import torch
 import torch.utils.data
 import scipy.io as sio
-from sklearn.model_selection import train_test_split
 
 
 class AvgrageMeter(object):
