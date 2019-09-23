@@ -52,5 +52,5 @@ where the optimization id and simulation id for visualization should be changed 
 ## Citation
 If you use any part of this code in your research, please cite our paper:
 ```
-updated once paper released
+updated once on arXiv
 ```
