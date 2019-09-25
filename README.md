@@ -1,13 +1,14 @@
 # private_flocking
 Code accompanying the paper
-> An Adversarial Approach to Private Flocking in Mobile Robot Teams\
-> Hehui Zheng, Jacopo Panerati, Giovanni Beltrame, Amanda Prorok.\
-> _arXiv: will be updated later_.
+> [An Adversarial Approach to Private Flocking in Mobile Robot Teams](https://arxiv.org/abs/1909.10387)\
+> Hehui Zheng (1), Jacopo Panerati (2), Giovanni Beltrame (2), Amanda Prorok (1)\
+> ((1) University of Cambridge, (2) Polytechnique Montreal)\
+> _arXiv: 1909.10387_.
 
 ## Requirements
 ```
 Unreal Engine release 4.18 (UE4), AirSim,
-Python >= 3.5, PyTorch == 1.2.0, torchvision == 0.4.0, PyGMO ==
+Python >= 3.5, PyTorch == 1.2.0, torchvision == 0.4.0, PyGMO == 2.10
 ```
 
 ## Pre-training discriminator
