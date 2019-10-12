@@ -53,5 +53,10 @@ where the optimization id and simulation id for visualization should be changed 
 ## Citation
 If you use any part of this code in your research, please cite our paper:
 ```
-updated once on arXiv
+@article{zheng2019adversarial,
+  title={An Adversarial Approach to Private Flocking in Mobile Robot Teams},
+  author={Zheng, Hehui and Panerati, Jacopo and Beltrame, Giovanni and Prorok, Amanda},
+  journal={arXiv preprint arXiv:1909.10387},
+  year={2019}
+}
 ```
