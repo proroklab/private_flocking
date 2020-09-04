@@ -10,6 +10,7 @@ Code accompanying the paper
 Unreal Engine release 4.18 (UE4), AirSim,
 Python >= 3.5, PyTorch == 1.2.0, torchvision == 0.4.0, PyGMO == 2.10
 ```
+Instructions to compile and run AirSim with UE4can be found [here](https://github.com/JacopoPan/a-minimalist-guide/blob/master/Part3-Using-AirSim.md#building-unreal-engine-4-and-airsim-from-source)
 
 ## Pre-training discriminator
 Before the co-optimization, the discriminator needed to be pre-trained.\
